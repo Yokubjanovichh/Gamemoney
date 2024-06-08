@@ -1,0 +1,468 @@
+.payment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px 0 40px;
+}
+
+.py-title {
+  color: #5e5e74;
+  font-size: 14px;
+  font-weight: 400;
+  flex: 1;
+}
+
+.payment__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment__header > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #9191a4;
+  font-size: 14px;
+  background: none;
+  border: none;
+}
+
+/* -------- payment__body ------- */
+.payment__body {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 16px;
+}
+
+.payment__body > label {
+  width: calc((100% - 20px) / 2);
+  height: 48px;
+  border-radius: 10px;
+  background: #252532;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.payment__body > label > input {
+  flex: 1;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: #e6e6f8;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.payment__body > label > input::placeholder {
+  color: #5e5e74;
+}
+
+.payment__body > label > button {
+  width: 98px;
+  height: 32px;
+  border-radius: 10px;
+  background: #2d2d3d7a;
+  border: none;
+  color: #9191a4;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.payment__body > label > button:hover {
+  background: #2d2d3d;
+}
+
+.pay_currency {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: #252532;
+}
+
+.pay_currency > input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: #e6e6f8;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.pay_currency > input::placeholder {
+  color: #5e5e74;
+}
+
+.select_currency {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-radius: 10px;
+  background: #20202b;
+  --select: 0;
+}
+
+.select_currency > button {
+  position: relative;
+  width: 85px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 0;
+}
+
+.select_currency > button span {
+  color: #5e5e74;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.select_currency > button.active span {
+  color: #e6e6f8;
+}
+
+.select_currency > button img {
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+.select_currency > button.active img {
+  opacity: 1;
+}
+
+.select_currency > strong {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85px;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #3d3d50 0%, #373749 100%);
+  transform: translateX(calc(100% * var(--select)));
+  transition: all 0.2s ease;
+}
+
+/* ----------- payment__commission ------------ */
+.payment__commission {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 16px;
+}
+
+.payment__system {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.pay_system {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.pay_system > button {
+  position: relative;
+  width: calc((100% - 48px) / 4);
+  padding: 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background: #2d2d3db8;
+  border: 1px solid transparent;
+}
+
+.pay_system > button.active {
+  border: 1px solid #34a47c;
+}
+
+.py_check {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: #34a47c;
+  color: #e6e6f8;
+  width: 24px;
+  height: 24px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30%;
+}
+
+.pay_system > button.active .py_check {
+  display: flex;
+}
+
+/* --------- pay_info ------------ */
+.pay_info {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px 0;
+  gap: 16px 32px;
+}
+
+.pay_info > p {
+  width: calc((100% - 32px) / 2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pay_info > p span {
+  color: #5e5e74;
+  font-size: 14px;
+}
+
+.pay_info > p strong {
+  flex: 1;
+  height: 1px;
+  border: 1px dashed #6e85a71f;
+}
+
+.pay_info > p i {
+  color: #e6e6f8;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.payment__system > button {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  background: #34a47c7c;
+  border: none;
+  color: #eef4ff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ---------- modal_info ------------ */
+.modal_info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(23, 23, 31, 0.72);
+  z-index: -999;
+  opacity: 0;
+  transition: all 0.1.7s ease;
+  padding: 3%;
+}
+
+.modal_info.active {
+  z-index: 999999999;
+  opacity: 1;
+}
+
+.modal__content {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  background: #2d2d3dd6;
+  backdrop-filter: blur(64px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 0;
+  transition: all 0.4s;
+}
+
+.modal__content.active {
+  opacity: 1;
+}
+
+.modal__content > h2 {
+  color: #e6e6f8;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 32px;
+}
+
+.modal__content > figure {
+  width: 100%;
+  padding: 24px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #393949 0%, #353545 100%);
+  box-shadow: 0px 4px 24px 0px rgba(51, 51, 69, 0.04);
+  backdrop-filter: blur(64px);
+}
+
+.modal__content > figure > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.modal__content__list {
+  list-style: none;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__content__list li {
+  color: #e6e6f8;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal__content > p {
+  background: #252533;
+  backdrop-filter: blur(64px);
+  padding: 16px 32px;
+  color: #9191a4;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal__content__button {
+  width: 100%;
+  padding: 24px 32px;
+}
+
+.modal__content__button button {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(111deg, #34a47c -21.56%, #2a8559 125.43%);
+  border: none;
+  cursor: pointer;
+  color: #eef4ff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .payment__body > label {
+    width: 100%;
+  }
+
+  .pay_system > button {
+    width: calc((100% - 32px) / 2);
+    padding: 6% 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .payment__body {
+    overflow: hidden;
+    gap: 16px;
+  }
+
+  .payment__body > label {
+    width: 100%;
+  }
+
+  .payment__body > label > input {
+    font-size: 14px;
+  }
+
+  .pay_currency {
+    width: 100%;
+    overflow: hidden;
+    gap: 10px;
+  }
+
+  .pay_currency > input {
+    flex: 1;
+    font-size: 14px;
+  }
+
+  .select_currency > button {
+    width: 65px;
+    gap: 5px;
+  }
+
+  .select_currency > button span {
+    font-size: 12px;
+  }
+
+  .select_currency > button img {
+    width: 14px;
+  }
+
+  .select_currency > strong {
+    width: 65px;
+    border-radius: 8px;
+  }
+
+  .pay_system > button {
+    width: 100%;
+    height: 90px;
+  }
+
+  .pay_info > p {
+    width: 100%;
+  }
+
+  .payment__system > button {
+    height: 45px;
+    border-radius: 10px;
+  }
+
+  .modal__content {
+    border-radius: 12px;
+    padding: 16px 0;
+  }
+
+  .modal__content > h2 {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .modal__content > figure {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .modal__content__list {
+    padding: 0 20px;
+  }
+
+  .modal__content__list li {
+    font-size: 14px;
+  }
+
+  .modal__content > p {
+    padding: 16px 20px;
+    font-size: 14px;
+  }
+
+  .modal__content__button {
+    padding: 5px 20px;
+  }
+
+  .modal__content__button button {
+    height: 40px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}

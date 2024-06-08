@@ -1,0 +1,116 @@
+.commission {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.commission > :where(.commission__percent, .commission__price) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commission__percent > p {
+  position: relative;
+  width: 64px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  background: #23e9a214;
+  color: #87abaf;
+  cursor: pointer;
+}
+
+.commission__percent > p::after {
+  content: "";
+  width: 64px;
+  height: 140%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+}
+
+.commission__percent > p.active {
+  background: #34a47c;
+  color: #e6e6f8;
+}
+
+.commission__price > p {
+  width: 64px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #788aa4;
+  font-weight: 500;
+  text-align: center;
+}
+
+.commission__price > p.active {
+  color: #d7e4f6;
+}
+
+.commission__line {
+  width: 100%;
+  height: 8px;
+  border-radius: 12px;
+  background: #2d2d3da3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commission__line > span {
+  position: relative;
+  width: 64px;
+}
+
+.commission__line > span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 20px;
+  border-radius: 12px;
+  background: #2d2d3da3;
+}
+
+.commission__line > span.active::after {
+  display: none;
+}
+
+.commission__line > span.active::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2a8559;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 540px) {
+  .commission__percent > p {
+    width: 48px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .commission__price > p {
+    width: 48px;
+    font-size: 12px;
+  }
+
+  .commission__line > span {
+    width: 48px;
+  }
+}

@@ -1,0 +1,156 @@
+.activity {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 16px;
+  background: #21212c7a;
+}
+
+.activity__header {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #c4d4f10a;
+}
+
+.activity__header > h3 {
+  color: #e6e6f8;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.activity__header > p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.activity__header > p b {
+  color: #e6e6f8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.live {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  background: #51d4a5;
+  border-radius: 50%;
+}
+
+.live::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 12px;
+
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: live 1s infinite ease-in-out;
+  transition: all 0.3s;
+}
+
+@keyframes live {
+  0% {
+    width: 6px;
+    height: 6px;
+    background: #34a47c7a;
+  }
+  50% {
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    width: 6px;
+    height: 6px;
+    background: #34a47d53;
+  }
+}
+
+.activity__list {
+  width: 100%;
+  list-style: none;
+  padding: 24px 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.activity__list > :nth-child(odd) {
+  border-radius: 12px;
+  background: #2d2d3d3d;
+}
+
+.activity__list > li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+}
+
+.activity__list > li > p {
+  color: #5e5e74;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.activity__list > li > strong {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #34a47c7a;
+}
+
+.activity__list > li > b {
+  color: #9191a4;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.activity__list > li > :last-child {
+  flex: 1;
+  text-align: right;
+}
+
+.activity__footer {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #2d2d3db8 0%, #2d2d3db8 100%);
+  backdrop-filter: blur(64px);
+}
+
+.activity__footer p {
+  width: calc(100% / 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.activity__footer p span {
+  color: #e6e6f8;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.activity__footer p i {
+  color: #9191a4;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.activity__footer strong {
+  width: 1px;
+  height: 75%;
+  background: #c4d4f114;
+}
